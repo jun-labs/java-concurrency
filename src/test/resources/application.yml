@@ -1,0 +1,31 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: ${DDL}
+    properties:
+      hibernate:
+        default_batch_fetch_size: 1000
+        show_sql: true
+        format_sql: true
+    open-in-view: false
+    show-sql: true
+
+  redis:
+    connect-timeout: ${REDIS1_CONNECTION_TIMEOUT}
+    host: ${REDIS1_HOST}
+    port: ${REDIS1_PORT}
+  redis2:
+    connect-timeout: ${REDIS2_CONNECTION_TIMEOUT}
+    host: ${REDIS2_HOST}
+    port: ${REDIS2_PORT}
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${URL}
+    username: ${USERNAME}
+    password: ${PASSWORD}
+    hikari:
+      maximum-pool-size: ${SIZE}
+
+server:
+  port: ${PORT}
